@@ -30,15 +30,11 @@ jobs:
         role-session-name: MySessionName
     - name: Clean Template Stack
       run: |
-        env:
-          ARTIFACT_BUCKET: $cat bucket-name.txt
-        rm bucket-name.txt
+        make clean
       continue-on-error: true
     - name: Create S3 Bucket AWS
       run: |
         make create-bucket
-      env:
-        NAME: steps.the-other-step-id.outputs.version
     - name: Deploy Template
       run: |
         make deploy
