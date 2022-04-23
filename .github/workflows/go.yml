@@ -31,6 +31,7 @@ jobs:
     - name: Clean Template Stack
       run: |
         make clean
+        sleep 30s
       continue-on-error: true
     - name: Create S3 Bucket AWS
       run: |
