@@ -28,4 +28,11 @@ jobs:
     - name: Clean AWS
       run: |
         make clean
+    - name: Create S3 Bucket AWS
+      run: |
+        make create-bucket
+
+    - name: Clean AWS
+      run: |
+        make deploy
     
