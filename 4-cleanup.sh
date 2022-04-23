@@ -8,15 +8,7 @@ fi
 # FUNCTION=$(aws cloudformation describe-stack-resource --stack-name $STACK --logical-resource-id function --query 'StackResourceDetail.PhysicalResourceId' --output text)
 aws cloudformation delete-stack --stack-name $STACK
 echo "Deleted $STACK stack."
-
-if [ -f bucket-name.txt ]; then
-    
-    echo "Borrando $BUCKET_NAME"
-     aws s3 rb --force s3://$BUCKET_NAME 
-     rm bucket-name.txt
-
-    
-fi
-
+echo "Borrando $BUCKET_NAME"
+aws s3 rb --force s3://$BUCKET_NAME 
 
 rm -f out.yml out.json lambda/main
