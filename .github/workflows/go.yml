@@ -25,3 +25,7 @@ jobs:
         aws-region: eu-west-1
         role-duration-seconds: 1200
         role-session-name: MySessionName
+    - name: Clean AWS
+      run: |
+        make clean
+    
