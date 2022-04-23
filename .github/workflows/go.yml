@@ -25,11 +25,13 @@ jobs:
         aws-region: eu-west-1
         role-duration-seconds: 1200
         role-session-name: MySessionName
-
+    - name: Clean Template Stack
+      run: |
+        make clean
     - name: Create S3 Bucket AWS
       run: |
         make create-bucket
-    - name: Clean AWS
+    - name: Deploy Template
       run: |
         make deploy
     
