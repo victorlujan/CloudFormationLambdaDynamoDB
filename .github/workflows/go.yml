@@ -7,7 +7,7 @@ on:
     branches: [ main ]
   
 env:
-  BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
+  BUCKET_NAME: lambda-users-bucket
 
 jobs:
   deploy:
