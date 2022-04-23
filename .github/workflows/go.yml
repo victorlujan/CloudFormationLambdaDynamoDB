@@ -28,6 +28,7 @@ jobs:
     - name: Clean Template Stack
       run: |
         make clean
+      continue-on-error: true
     - name: Create S3 Bucket AWS
       run: |
         make create-bucket
