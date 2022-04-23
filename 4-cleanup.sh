@@ -12,8 +12,8 @@ echo "Deleted $STACK stack."
 if [ -f bucket-name.txt ]; then
     ARTIFACT_BUCKET=$(cat bucket-name.txt)
     echo "Borrando $ARTIFACT_BUCKET"
-        
-     aws s3 rb --force s3://$ARTIFACT_BUCKET; rm bucket-name.txt;
+     aws s3 rb --force s3://$ARTIFACT_BUCKET 
+     rm bucket-name.txt
 
     
 fi
