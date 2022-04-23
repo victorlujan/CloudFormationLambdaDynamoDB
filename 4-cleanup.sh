@@ -18,14 +18,4 @@ if [ -f bucket-name.txt ]; then
          
     fi
 fi
-
-# while true; do
-#     read -p "Delete function log group (/aws/lambda/$FUNCTION)? (y/n)" response
-#     case $response in
-#         [Yy]* ) aws logs delete-log-group --log-group-name /aws/lambda/$FUNCTION; break;;
-#         [Nn]* ) break;;
-#         * ) echo "Response must start with y or n.";;
-#     esac
-# done
-
 rm -f out.yml out.json lambda/main
