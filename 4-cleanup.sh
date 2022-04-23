@@ -15,7 +15,7 @@ if [ -f bucket-name.txt ]; then
         echo "Bucket was not created by this application. Skipping."
     else
         
-                [Yy]* ) aws s3 rb --force s3://$ARTIFACT_BUCKET; rm bucket-name.txt;
+         aws s3 rb --force s3://$ARTIFACT_BUCKET; rm bucket-name.txt;
 
     fi
 fi
