@@ -31,6 +31,5 @@ jobs:
         make create-bucket
     - name: Clean AWS
       run: |
-        go mod tidy
         make deploy
     
