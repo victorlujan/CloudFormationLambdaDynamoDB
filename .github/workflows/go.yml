@@ -7,7 +7,7 @@ on:
     branches: [ main ]
   
 env:
-  ARTIFACT_BUCKET: $cat bucket-name.txt
+  BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
 
 jobs:
   deploy:
