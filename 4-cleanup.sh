@@ -14,7 +14,7 @@ if [ -f bucket-name.txt ]; then
     if [[ ! $ARTIFACT_BUCKET =~ lambda-artifacts-[a-z0-9]{16} ]] ; then
         echo "Bucket was not created by this application. Skipping."
     else
-         aws s3 rb --force s3://$ARTIFACT_BUCKET; rm bucket-name.txt; break;;
+         aws s3 rb --force s3://$ARTIFACT_BUCKET; rm bucket-name.txt;
          
     fi
 fi
