@@ -14,8 +14,18 @@ if [ -f bucket-name.txt ]; then
     if [[ ! $ARTIFACT_BUCKET =~ lambda-artifacts-[a-z0-9]{16} ]] ; then
         echo "Bucket was not created by this application. Skipping."
     else
-         aws s3 rb --force s3://$ARTIFACT_BUCKET; rm bucket-name.txt;
-         
+                   [Yy]* ) aws s3 rb --force s3://$ARTIFACT_BUCKET; rm bucket-name.txt; break;;
+                
     fi
 fi
+
+# while true; do
+#     read -p "Delete function log group (/aws/lambda/$FUNCTION)? (y/n)" response
+#     case $response in
+#         [Yy]* ) aws logs delete-log-group --log-group-name /aws/lambda/$FUNCTION; break;;
+#         [Nn]* ) break;;
+#         * ) echo "Response must start with y or n.";;
+#     esac
+# done
+
 rm -f out.yml out.json lambda/main
